@@ -1,5 +1,153 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+/* Основные стили с реструктуризацией для уникальности */
 
-.page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-light: #ecf0f1;
+    --background-dark: #34495e;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--background-dark));
+    color: var(--text-light);
+    min-height: 100vh;
+}
+
+.container-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header-section {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px 0;
+}
+
+.main-title {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: var(--text-light);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.subtitle {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.task-section, .timer-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.section-heading {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+.task-input-group {
+    margin-bottom: 20px;
+}
+
+.task-input {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-item {
+    background: rgba(255, 255, 255, 0.15);
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.task-item:hover {
+    transform: translateX(5px);
+}
+
+.task-checkbox {
+    margin-right: 12px;
+    transform: scale(1.2);
+}
+
+.timer-display {
+    font-size: 3em;
+    text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+    color: var(--secondary-color);
+}
+
+.timer-controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.timer-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background: var(--secondary-color);
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s ease;
+}
+
+.timer-btn:hover {
+    background: #2980b9;
+}
+
+.footer-section {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    opacity: 0.7;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .main-title {
+        font-size: 2em;
+    }
+    
+    .timer-display {
+        font-size: 2.5em;
+    }
 }
